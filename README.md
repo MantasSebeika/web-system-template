@@ -1,4 +1,4 @@
-# POkemon DATABASE
+# Pokemon DATABASE
 
 ## Description
 - [ ] Web database about all pokemons statistics that they have. Also if new generation comes out or status get changed you can add new pokemon, delete it or change pokemon status.
@@ -48,3 +48,5 @@ It will be just three windows. Main - where you can get list of pokemons by filt
   - Possible actions:
     - Cancel: Does not save the changes and opens Main window
     - Save: Saves new pokemon
+
+https://wireframe.cc/9S5Ood
