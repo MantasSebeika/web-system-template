@@ -1,44 +1,52 @@
-# WEB system
-- [ ] Replace "WEB system" with your system name
+# POkemon DATABASE
 
 ## Description
-- [ ] Provide WEB system description in few sentences - its purpose, users, etc.
+- [ ] Web database about all pokemons statistics that they have. Also if new generation comes out or status get changed you can add new pokemon, delete it or change pokemon status.
 
-## Entity definition
-- [ ] Define the entity ("object" that will be manipulated) of WEB system
-- [ ] Entity should have a name
-- [ ] Entity should have 3 mandatory attributes:
-    - [ ] ID - depending on specific service this could be a number or string
-    - [ ] Creation date - (if applicable for specific service) ISO 8601 format date string
-    - [ ] Modification date - (if applicable for specific service) ISO 8601 format date string
-- [ ] Entity should have at least 5 custom attributes
-    - [ ] Each attribute should have a type defined: number, string, ISO 8601 date string, boolean, object, array or other
-    - [ ] Each attribute should have restrictions defined: list of constants, or number range, or string length, or string format, or object schema, or array schema or other. For example, you can use `joi` language to define restrictions: https://github.com/hapijs/joi/blob/v13.1.2/API.md
+## Pokemon
+Atributes:
+- ID : Pokemon ID, mandatory (number, 0<ID<999)
+- Name : Pokemon name, mandatory (String, <25 char)
+- Type : Pokemon type, mandatory (Array, size = 15)
+- Type2 : Pokemon secondary type (Array, size = 15)
+- Ability : Pokemon special abillity (String, <80 char)
+- Size : Pokemon size in cm (number, 0<Size<90000)
+- Weight : Pokemon weight in kg (number, 0<Weight<50000)
+- Description : Pokemon description (String, <120)
 
-## API definition
-- [ ] Define specific service (konkrečios paslaugos) API methods that WEB system is going to use
-- [ ] Optionally define additional API methods that WEB system is going to expose
-- [ ] API should have at least 4 methods
-    - [ ] A method to return entity by ID. Should not have request body
-    - [ ] A method to return multiple entities (Array) by ID. This method should support at least one header value to:
-        - [ ] Return only entities that match pattern in one of its attributes
-        - [ ] Return 10 entities starting provided index
-        - [ ] Return sorted entities by one of its attributes (both ascending and descending)
-        - [ ] Other (should be approved by Product Owner (PO))
-    - [ ] A method to remove entity by ID. Returns removed entity. Should not have request body
-    - [ ] A method to update entity by ID. Accepts entity to update and returns updated entity
-- [ ] Each method should have HTTP method defined
-- [ ] Each method should have URI defined (use {id} as entity ID placeholder)
-- [ ] Should return all 4xx errors in unified format. Define format using `joi` language
-- [ ] Should return all 5xx errors in unified format. Define format using `joi` language
+## API
+Possibilities:
+- Get a pokemon by its ID. Method: Get, /api/pokemon/:id
+- Get a pokemon by its name. Method: Get, /api/pokemon/:name
+- Get a pokemons list by their type. Method: Get, /api/pokemon/:type
+- Get a pokemons list by their size. Method: Get, /api/pokemon/:size
+- Get a pokemons list by their weight. Method: Get, /api/pokemon/:weight
+- Delete a pokemon. Method: Delete, /api/pokemon/:id
+- Edit a pokemon. Method: Put, /api/pokemon/:id
+- Create a new pokemon. Method: Post, /api/pokemon/
 
-## UI definition
-- [ ] Define the structure of how visually the WEB system is going to look like
-- [ ] Should have at least one view defined with https://wireframe.cc (or other wireframe tool):
-- [ ] The view should have a title
-- [ ] The view should have a description of a service provided by web system
-- [ ] The view should include at least 2 UI components:
-    - [ ] A component to display multiple entities with all their attribute values visible. It should be posible to remove and edit selected entity.
-        - [ ] Depending on chosen header of API method that returns multiple entities, it should be posible to select specific 10 entities starting index, sort entities by attribute, filter entities by attribute pattern, or other (should be approved by Product Owner (PO))
-    - [ ] A component to create a new entity/edit existing entity. It should be posbile to create new entity and edit selected entity
-        - [ ] Each attribute should have a dedicated editor field: text box for string or number, checkbox or radio buttons for boolean, date picker for date, etc.
+## UI
+It will be just three windows. Main - where you can get list of pokemons by filter or search. Second - You can look at one pokemon stats, change them or delete pokemon. Third - Add new pokemon. 
+
+- Main:
+  - A list of all pokemon: ID, Name, Type, Type2, size, weight. 
+  - Possible actions: 
+    - New: opens Third window (Create a new pokemon mode)
+    - Find: Opens pokemon second window (Edit mode) if the ID is found (from the text box)
+    - Filter: Filters the list by selected ID, type, name, size, weight
+    - Edit: Opens second window with the pokemon (Edit mode)
+    - Delete: Opens second window where you can Delete the pokemon
+
+- Second:
+  - A single pokemons data
+  - Possible actions:
+    - Delete: Deletes the pokemon and opens the Main window
+    - Cancel: Does not save the changes and opens Main window
+    - Edit: is named depending on the window mode (Edit, Create). Saves the changes on the pokemon and opens the Main window
+    
+- Third:
+  - A single pokemons data
+  - Possible actions:
+    - New: Creates a new pokemon with all fields empty (except ID) and shows it in the window (Create mode)
+    - Cancel: Does not save the changes and opens Main window
+    - Save: Saves new pokemon
