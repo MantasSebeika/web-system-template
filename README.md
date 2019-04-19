@@ -32,7 +32,6 @@ It will be just three windows. Main - where you can get list of pokemons by filt
   - A list of all pokemon: ID, Name, Type, Type2, size, weight. 
   - Possible actions: 
     - New: opens Third window (Create a new pokemon mode)
-    - Find: Opens pokemon second window (Edit mode) if the ID is found (from the text box)
     - Filter: Filters the list by selected ID, type, name, size, weight
     - Edit: Opens second window with the pokemon (Edit mode)
     - Delete: Opens second window where you can Delete the pokemon
