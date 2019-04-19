@@ -46,6 +46,5 @@ It will be just three windows. Main - where you can get list of pokemons by filt
 - Third:
   - A single pokemons data
   - Possible actions:
-    - New: Creates a new pokemon with all fields empty (except ID) and shows it in the window (Create mode)
     - Cancel: Does not save the changes and opens Main window
     - Save: Saves new pokemon
