@@ -41,7 +41,7 @@ It will be just three windows. Main - where you can get list of pokemons by filt
   - Possible actions:
     - Delete: Deletes the pokemon and opens the Main window
     - Cancel: Does not save the changes and opens Main window
-    - Edit: is named depending on the window mode (Edit, Create). Saves the changes on the pokemon and opens the Main window
+    - Save: Save made changes
     
 - Third:
   - A single pokemons data
