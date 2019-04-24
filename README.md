@@ -22,8 +22,8 @@ Possibilities:
 - Get a pokemons list by their size. Method: Get, /api/pokemon/:size
 - Get a pokemons list by their weight. Method: Get, /api/pokemon/:weight
 - Delete a pokemon. Method: Delete, /api/pokemon/:id
-- Edit a pokemon. Method: Put, /api/pokemon/:id
-- Create a new pokemon. Method: Post, /api/pokemon/
+- Put a pokemon. Method: Put, /api/pokemon/:id
+- Post a new pokemon. Method: Post, /api/pokemon/
 
 ## UI
 It will be just three windows. Main - where you can get list of pokemons by filter or search. Second - You can look at one pokemon stats, change them or delete pokemon. Third - Add new pokemon. 
