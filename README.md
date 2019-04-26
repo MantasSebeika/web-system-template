@@ -17,13 +17,43 @@ Atributes:
 ## API
 Possibilities:
 - Get a pokemon by its ID. Method: Get, /api/pokemon/:id
+- [ ] Gets all pokemon by id.
+    - Returns 200 (OK) list of all Pokemons.
+    - Returns 200 with empty list if no pokemon found.
+    - Returns 404 (NotFound) if Pokemon doesn't exist.
 - Get a pokemon by its name. Method: Get, /api/pokemon/:name
+- [ ] Gets all pokemon by name.
+    - Returns 200 (OK) list of all Pokemons.
+    - Returns 200 with empty list if no pokemon found.
+    - Returns 404 (NotFound) if Pokemon doesn't exist.
 - Get a pokemons list by their type. Method: Get, /api/pokemon/:type
+- [ ] Gets all Types.
+    - Returns 200 (OK) list of all Types.
+    - Returns 200 with empty list if no Types found.
+    - Returns 404 (NotFound) if Type doesn't exist.
 - Get a pokemons list by their size. Method: Get, /api/pokemon/:size
+- [ ] Gets all Pokemon by size.
+    - Returns 200 (OK) list of all Pokemons by size.
+    - Returns 200 with empty list if no Size found.
+    - Returns 404 (NotFound) if Size doesn't exist.
 - Get a pokemons list by their weight. Method: Get, /api/pokemon/:weight
+- [ ] Gets all Pokemon by weight.
+    - Returns 200 (OK) list of all Pokemons by weight.
+    - Returns 200 with empty list if no weight found.
+    - Returns 404 (NotFound) if weight doesn't exist.
 - Delete a pokemon. Method: Delete, /api/pokemon/:id
-- Put a pokemon. Method: Put, /api/pokemon/:id
+- [ ] Deletes Pokemon by id.
+     - 200 deleted
+     - 404 not found
+- Update a pokemon. Method: Update, /api/pokemon/:id
+    - [ ] Updates Pokemon by id.
+     - 200 updated
+     - 404 not found
 - Post a new pokemon. Method: Post, /api/pokemon/
+- [ ] Creates new Pokemon.
+    - 502 (Bad Gateway) if given Pokemon was invalid.
+    - 202 if Pokemon posted.
+    - 500 if some internal errors occured.
 
 ## UI
 It will be just three windows. Main - where you can get list of pokemons by filter or search. Second - You can look at one pokemon stats, change them or delete pokemon. Third - Add new pokemon. 
